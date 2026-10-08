@@ -1,0 +1,24 @@
+# Build output (zips are made by xolius-tools/build-releases.py)
+*.zip
+dist/
+node_modules/
+
+# Design sources and previews stay on the PC (large binaries)
+Designs/
+Template preview/
+*.psd
+
+# Local notes, logs, OS files
+DEV_BRIEF.md
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Never commit secrets
+.env
+.env.*
+*.key
+id_rsa*
+id_ed25519*
+wp-config.php

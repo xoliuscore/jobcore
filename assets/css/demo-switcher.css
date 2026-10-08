@@ -1,0 +1,69 @@
+/*
+ * Demo look switcher: a tab on the right edge and a sliding panel with board skins.
+ * Fixed colours so the chrome is not part of a look.
+ */
+.wpjc-demo-tab{
+  position:fixed; right:0; top:50%; z-index:950; transform:translateY(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:8px; padding:12px 8px; border:0; border-radius:10px 0 0 10px;
+  background:#0b1f5c; color:#fff; font:700 12px/1 system-ui, -apple-system, "Segoe UI", sans-serif; letter-spacing:.06em; text-transform:uppercase;
+  box-shadow:-4px 6px 20px rgba(0,0,0,.25); cursor:pointer; transition:padding .2s ease, background .2s ease;
+}
+.wpjc-demo-tab:hover, .wpjc-demo-tab[aria-expanded="true"]{ background:#ff6a00; padding-right:12px; }
+.wpjc-demo-tab__icon{ display:grid; place-items:center; }
+.wpjc-demo-tab__label{ writing-mode:vertical-rl; transform:rotate(180deg); }
+
+.wpjc-demo-panel{
+  position:fixed; top:0; right:0; bottom:0; z-index:960; width:min(560px, 100vw); overflow-y:auto; overscroll-behavior:contain;
+  padding:20px 20px 28px; background:#fff; color:#111114; box-shadow:-20px 0 60px rgba(0,0,0,.25);
+  font:400 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+  transform:translateX(100%); transition:transform .3s cubic-bezier(.2,.8,.2,1);
+}
+.wpjc-demo-panel[hidden]{ display:block; visibility:hidden; }
+.wpjc-demo-panel.is-open{ transform:none; visibility:visible; }
+.wpjc-demo-panel__head{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.wpjc-demo-panel__title{ margin:0; font-size:20px; font-weight:800; letter-spacing:-.01em; }
+.wpjc-demo-panel__close{ display:grid; place-items:center; width:36px; height:36px; padding:0; border:0; border-radius:50%; background:#f2f2f4; color:#111114; cursor:pointer; }
+.wpjc-demo-panel__close:hover{ background:#e4e4e8; }
+.wpjc-demo-panel__close svg{ width:18px; height:18px; }
+.wpjc-demo-panel__intro{ margin:6px 0 16px; color:#5c5c66; font-size:13.5px; }
+.wpjc-demo-panel__grid{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px; margin:0; padding:0; list-style:none; }
+.wpjc-demo-card{ display:flex; flex-direction:column; gap:4px; height:100%; padding:8px 8px 10px; border:2px solid #e4e4e8; border-radius:10px; color:#111114; text-decoration:none; transition:border-color .15s, box-shadow .15s, transform .15s; }
+.wpjc-demo-card:hover{ border-color:#111114; transform:translateY(-1px); box-shadow:0 8px 20px rgba(0,0,0,.08); color:#111114; }
+.wpjc-demo-card.is-current{ border-color:#ff6a00; box-shadow:0 0 0 3px rgba(255,106,0,.18); }
+.wpjc-demo-card__name{ display:flex; align-items:center; gap:6px; font-size:14px; font-weight:700; }
+.wpjc-demo-card.is-current .wpjc-demo-card__name::after{ content:"✓"; color:#ff6a00; font-weight:800; }
+.wpjc-demo-card__desc{ color:#5c5c66; font-size:12px; line-height:1.4; }
+.wpjc-demo-panel__reset{ display:inline-block; margin-top:16px; color:#111114; font-weight:700; text-decoration:underline; text-underline-offset:3px; }
+
+.wpjc-demo-mock{
+  display:block; height:92px; margin-bottom:6px; border-radius:6px; overflow:hidden; background:#f4f5f7;
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.06);
+}
+.wpjc-demo-mock--default{
+  background:
+    linear-gradient(#2563eb, #2563eb) 0 0 / 100% 18px no-repeat,
+    linear-gradient(#fff, #fff) 8px 26px / calc(100% - 16px) 22px no-repeat,
+    linear-gradient(#e5e7eb, #e5e7eb) 8px 54px / 28px 28px no-repeat,
+    linear-gradient(#e5e7eb, #e5e7eb) 42px 54px / 28px 28px no-repeat,
+    linear-gradient(#e5e7eb, #e5e7eb) 76px 54px / 28px 28px no-repeat,
+    #f4f5f7;
+}
+.wpjc-demo-mock--market{
+  background:
+    linear-gradient(#0b5fde, #0b5fde) 0 0 / 100% 28px no-repeat,
+    linear-gradient(#fff, #fff) 8px 16px / calc(100% - 16px) 28px no-repeat,
+    linear-gradient(#ff6a00, #ff6a00) calc(100% - 22px) 24px / 14px 12px no-repeat,
+    linear-gradient(#fff, #fff) 8px 52px / calc(100% - 16px) 14px no-repeat,
+    linear-gradient(#fff, #fff) 8px 70px / calc(100% - 16px) 14px no-repeat,
+    #eef1f6;
+}
+
+.admin-bar .wpjc-demo-panel{ top:32px; }
+@media screen and (max-width:782px){
+  .admin-bar .wpjc-demo-panel{ top:46px; }
+}
+@media (max-width:520px){
+  .wpjc-demo-panel__grid{ grid-template-columns:minmax(0,1fr); }
+  .wpjc-demo-tab{ top:auto; bottom:84px; transform:none; }
+}
+@media (prefers-reduced-motion: reduce){ .wpjc-demo-panel, .wpjc-demo-tab, .wpjc-demo-card{ transition:none; } }

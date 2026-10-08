@@ -1,0 +1,32 @@
+/* WP Job Core — employer logo picker. */
+.wpjc-logo-pick{ display:flex; align-items:center; gap:16px; }
+.wpjc-logo-pick__preview{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+  width:96px;
+  height:96px;
+  padding:6px;
+  overflow:hidden;
+  border:1px dashed #c3c4c7;
+  border-radius:12px;
+  background:#f6f7f7;
+  color:#8c8f94;
+  cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.wpjc-logo-pick__preview:hover,
+.wpjc-logo-pick__preview:focus-visible{ border-color:#2271b1; color:#2271b1; }
+.wpjc-logo-pick__preview img{ width:100%; height:100%; object-fit:contain; }
+.wpjc-logo-pick__preview .dashicons{ width:32px; height:32px; font-size:32px; }
+.wpjc-logo-pick.has-logo .wpjc-logo-pick__preview{ border-style:solid; border-color:#dcdcde; background:#fff; }
+.wpjc-logo-pick.has-logo .wpjc-logo-pick__preview .dashicons,
+.wpjc-logo-pick__change,
+.wpjc-logo-pick [data-wpjc-logo-remove]{ display:none; }
+.wpjc-logo-pick.has-logo .wpjc-logo-pick__change{ display:inline; }
+.wpjc-logo-pick.has-logo .wpjc-logo-pick__add{ display:none; }
+.wpjc-logo-pick.has-logo [data-wpjc-logo-remove]{ display:inline-block; }
+.wpjc-logo-pick__actions{ display:flex; align-items:center; gap:14px; margin:0 0 6px !important; }
+.wpjc-logo-pick__side .description{ margin:0 !important; }
+.form-field .wpjc-logo-pick input[type="hidden"]{ display:none; }
