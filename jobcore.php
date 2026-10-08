@@ -3,7 +3,7 @@
  * Plugin Name:       JobCore
  * Plugin URI:        https://xolius.com/product/jobcore/
  * Description:       A complete, good-looking job board: listings with search and filters, employer pages, applications with CV upload, job alerts and a front-end account for candidates and employers.
- * Version:           1.0.2
+ * Version:           1.0.3
  * Requires at least: 6.5
  * Requires PHP:      8.0
  * Author:            Xolius by BlueAgency
@@ -41,7 +41,7 @@ if ( defined( 'WPJC_VERSION' ) ) {
 	return;
 }
 
-define( 'WPJC_VERSION', '1.0.2' );
+define( 'WPJC_VERSION', '1.0.3' );
 define( 'WPJC_FILE', __FILE__ );
 define( 'WPJC_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WPJC_URL', plugin_dir_url( __FILE__ ) );

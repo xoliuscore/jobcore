@@ -4,7 +4,7 @@ Tags: job board, jobs, careers, job listings, recruitment
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -106,6 +106,9 @@ The "Get it" and "Learn more" buttons on the Add-ons screen are ordinary links t
 
 == Changelog ==
 
+= 1.0.3 =
+* Job board on phones: the contact row and its buttons wrap instead of running off the screen.
+
 = 1.0.2 =
 * First release on WordPress.org: board, search and filters, employer pages, applications with CV upload, job alerts, bookmarks, front-end account, setup wizard, import / export, standalone portal look and Nextend Social Login support.
 * Cart link in the jobs header when WooCommerce has items in the cart (paid listings).
@@ -113,6 +116,9 @@ The "Get it" and "Learn more" buttons on the Add-ons screen are ordinary links t
 * Live search results stay on top of the page.
 
 == Upgrade Notice ==
+
+= 1.0.3 =
+Small layout fix for phones.
 
 = 1.0.2 =
 First release on WordPress.org.
